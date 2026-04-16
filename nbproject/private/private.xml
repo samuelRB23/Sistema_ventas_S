@@ -4,7 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/NetBeansProjects/Sistema_Ventas_Fs/src/database/Conexion.java</file>
-            <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/NetBeansProjects/Sistema_Ventas_Fs/src/database/pruebaConexion.java</file>
+            <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/NetBeansProjects/Sistema_Ventas_Fs/src/datos/interfaces/CrudSimpleInterface.java</file>
+            <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/NetBeansProjects/Sistema_Ventas_Fs/src/entidades/Categoria.java</file>
+            <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/NetBeansProjects/Sistema_Ventas_Fs/src/datos/CategoriaDAO.java</file>
         </group>
     </open-files>
 </project-private>

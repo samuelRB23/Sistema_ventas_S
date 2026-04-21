@@ -15,6 +15,7 @@ public class CategoriaControl {
     private final CategoriaDAO DATOS;
     private Categoria obj;
     private DefaultTableModel modeloTabla;
+    public int registroMostrados;
     
     public CategoriaControl(){
         this.DATOS = new CategoriaDAO();
@@ -43,6 +44,7 @@ public class CategoriaControl {
             registro[2] = item.getDescripcion();
             registro[3] = estado;
             this.modeloTabla.addRow(registro);
+            this.registroMostrados = this.registroMostrados + 1;
         }
         
     return this.modeloTabla;
@@ -63,7 +65,23 @@ public class CategoriaControl {
     }
     
     public String actualizar(int id, String nombre, String nombreAnt, String descripcion){
-        
+        if(nombre.equals(nombreAnt)){
+            obj.setId(id);
+            obj.setNombre(nombre);
+            obj.setDescripcion(descripcion);
+            if(DATOS.actualizar(obj)){
+                return "OK";
+            }else{
+                return "Error actualizacion";
+            }
+            
+        }else{
+            if(DATOS.existe(nombre)){
+                return "El registro ya existe";
+            }else{
+                
+            }
+        }
     }
     
     public String desactivar(int id){
@@ -76,5 +94,9 @@ public class CategoriaControl {
     
     public int total(){
         
+    }
+    
+    public int totalMostrados(){
+        return this.registroMostrados;
     }
 }

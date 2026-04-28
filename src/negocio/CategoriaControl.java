@@ -74,26 +74,35 @@ public class CategoriaControl {
             }else{
                 return "Error actualizacion";
             }
-            
-        }else{
+        }  
+        else{
             if(DATOS.existe(nombre)){
                 return "El registro ya existe";
             }else{
                 
             }
         }
+        return nombre;
     }
     
     public String desactivar(int id){
-        
+        if(DATOS.desactivar(id)){
+            return "OK";
+        }else{
+            return "no se puede desactivar el registro";
+        }
     }
     
     public String activar(int id){
-        
+        if(DATOS.activar(id)){
+            return "OK";
+        }else{
+            return "no se puede activar el registro";
+        }
     }
     
     public int total(){
-        
+        return DATOS.total();
     }
     
     public int totalMostrados(){

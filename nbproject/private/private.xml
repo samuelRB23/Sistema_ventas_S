@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/NetBeansProjects/Sistema_Ventas_Fs/src/entidades/Categoria.java</file>
             <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/NetBeansProjects/Sistema_Ventas_Fs/src/database/Conexion.java</file>
             <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/NetBeansProjects/Sistema_Ventas_Fs/src/datos/CategoriaDAO.java</file>
             <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/NetBeansProjects/Sistema_Ventas_Fs/src/negocio/CategoriaControl.java</file>
+=======
+            <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/Sistema_ventas_S/src/presentacion/FrmPrincipal.java</file>
+            <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/Sistema_ventas_S/src/negocio/CategoriaControl.java</file>
+            <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/Sistema_ventas_S/src/entidades/Categoria.java</file>
+            <file>file:/C:/Users/SamuelCamiloRojasBla/Documents/Sistema_ventas_S/src/presentacion/FrmCategoria.java</file>
+>>>>>>> 8374a36e93a8d62a247951a153c08f5455656242
         </group>
     </open-files>
 </project-private>

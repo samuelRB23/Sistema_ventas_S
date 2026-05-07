@@ -74,14 +74,20 @@ public class CategoriaControl {
             }else{
                 return "Error actualizacion";
             }
+<<<<<<< HEAD
             
         }else{
+=======
+        }  
+        else{
+>>>>>>> feature/negocio-CategoriaControl
             if(DATOS.existe(nombre)){
                 return "El registro ya existe";
             }else{
                 
             }
         }
+<<<<<<< HEAD
     }
     
     public String desactivar(int id){
@@ -94,6 +100,29 @@ public class CategoriaControl {
     
     public int total(){
         
+=======
+        return nombre;
+    }
+    
+    public String desactivar(int id){
+        if(DATOS.desactivar(id)){
+            return "OK";
+        }else{
+            return "no se puede desactivar el registro";
+        }
+    }
+    
+    public String activar(int id){
+        if(DATOS.activar(id)){
+            return "OK";
+        }else{
+            return "no se puede activar el registro";
+        }
+    }
+    
+    public int total(){
+        return DATOS.total();
+>>>>>>> feature/negocio-CategoriaControl
     }
     
     public int totalMostrados(){

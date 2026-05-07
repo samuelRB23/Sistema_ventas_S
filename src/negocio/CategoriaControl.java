@@ -1,0 +1,102 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package negocio;
+
+import entidades.Categoria;
+import datos.CategoriaDAO;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
+public class CategoriaControl {
+    
+    private final CategoriaDAO DATOS;
+    private Categoria obj;
+    private DefaultTableModel modeloTabla;
+    public int registroMostrados;
+    
+    public CategoriaControl(){
+        this.DATOS = new CategoriaDAO();
+        this.obj = new Categoria();
+    }
+    
+    public DefaultTableModel listar(String texto){
+        List<Categoria> lista = new ArrayList<>();
+        lista.addAll(DATOS.listar(texto));
+        
+        String[] titulos = {"Id","Nombre","Descripcion","Estado"};
+        this.modeloTabla = new DefaultTableModel(null,titulos);
+        
+        String estado;
+        String[] registro = new String[4];
+        
+        for(Categoria item:lista){
+            if(item.isActivo()){
+                estado = "Activo";
+            }else{
+                estado = "Inactivo";
+            }
+            
+            registro[0] = Integer.toString(item.getId());
+            registro[1] = item.getNombre();
+            registro[2] = item.getDescripcion();
+            registro[3] = estado;
+            this.modeloTabla.addRow(registro);
+            this.registroMostrados = this.registroMostrados + 1;
+        }
+        
+    return this.modeloTabla;
+    }
+    
+    public String insertar(String nombre, String descripcion){
+        if(DATOS.existe(nombre)){
+            return "El registro ya existe";
+        }else{
+            obj.setNombre(nombre);
+            obj.setDescripcion(descripcion);
+            if(DATOS.insertar(obj)){
+                return "OK";
+            }else{
+                return "error en el registro";
+            }
+        }
+    }
+    
+    public String actualizar(int id, String nombre, String nombreAnt, String descripcion){
+        if(nombre.equals(nombreAnt)){
+            obj.setId(id);
+            obj.setNombre(nombre);
+            obj.setDescripcion(descripcion);
+            if(DATOS.actualizar(obj)){
+                return "OK";
+            }else{
+                return "Error actualizacion";
+            }
+            
+        }else{
+            if(DATOS.existe(nombre)){
+                return "El registro ya existe";
+            }else{
+                
+            }
+        }
+    }
+    
+    public String desactivar(int id){
+        
+    }
+    
+    public String activar(int id){
+        
+    }
+    
+    public int total(){
+        
+    }
+    
+    public int totalMostrados(){
+        return this.registroMostrados;
+    }
+}
